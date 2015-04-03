@@ -18,50 +18,56 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-namespace Dnn.Modules.Survey.Models
+namespace Dnn.Modules.Survey.Data
 {
+    using DotNetNuke.Data;
+
     /// <summary>
     /// </summary>
-    public class SurveyResultInfo
+    internal abstract class SurveyRepositoryBase
     {
-        /// <summary>
-        /// Gets or sets a value indicating whether this instance is correct.
-        /// </summary>
-        /// <value>
-        /// <c>true</c> if this instance is correct; otherwise, <c>false</c>.
-        /// </value>
-        public bool IsCorrect { get; set; }
+        #region [ Properties ]
 
         /// <summary>
-        /// Gets or sets the name of the option.
+        /// Gets the database owner.
         /// </summary>
         /// <value>
-        /// The name of the option.
+        /// The database owner.
         /// </value>
-        public string OptionName { get; set; }
+        protected string DatabaseOwner
+        {
+            get
+            {
+                return DataProvider.Instance()
+                                   .DatabaseOwner;
+            }
+        }
 
         /// <summary>
-        /// Gets or sets the type of the option.
+        /// Gets the object qualifier.
         /// </summary>
         /// <value>
-        /// The type of the option.
+        /// The object qualifier.
         /// </value>
-        public string OptionType { get; set; }
+        protected string ObjectQualifier
+        {
+            get
+            {
+                return DataProvider.Instance()
+                                   .ObjectQualifier;
+            }
+        }
+
+        #endregion
 
         /// <summary>
-        /// Gets or sets the question.
+        /// Gets the fully qualified name of the object.
         /// </summary>
-        /// <value>
-        /// The question.
-        /// </value>
-        public string Question { get; set; }
-
-        /// <summary>
-        /// Gets or sets the user identifier.
-        /// </summary>
-        /// <value>
-        /// The user identifier.
-        /// </value>
-        public int UserId { get; set; }
+        /// <param name="objectName">Name of the object.</param>
+        /// <returns></returns>
+        protected virtual string GetFullyQualifiedName(string objectName)
+        {
+            return this.DatabaseOwner + this.ObjectQualifier + objectName;
+        }
     }
 }

@@ -8,12 +8,12 @@
 /*****                                                  *****/
 /************************************************************/
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}UpdateSurvey]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-	drop procedure {databaseOwner}{objectQualifier}UpdateSurvey
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}UpdateSurvey]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}UpdateSurvey
 GO
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}DeleteSurvey]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-	drop procedure {databaseOwner}{objectQualifier}DeleteSurvey
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}DeleteSurvey]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}DeleteSurvey
 GO
 
 /** Create Stored Procedures **/

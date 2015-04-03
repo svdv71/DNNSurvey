@@ -1,40 +1,51 @@
-﻿drop procedure {databaseOwner}{objectQualifier}GetSurveys
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+
+DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurveys
 GO
 
-drop procedure {databaseOwner}{objectQualifier}GetSurvey
+DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurvey
 GO
 
-drop procedure {databaseOwner}{objectQualifier}AddSurvey
+DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurvey
 GO
 
-drop procedure {databaseOwner}{objectQualifier}UpdateSurvey
+DROP PROCEDURE {databaseOwner}{objectQualifier}UpdateSurvey
 GO
 
-drop procedure {databaseOwner}{objectQualifier}DeleteSurvey
+DROP PROCEDURE {databaseOwner}{objectQualifier}DeleteSurvey
 GO
 
-drop procedure {databaseOwner}{objectQualifier}GetSurveyOptions
+DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurveyOptions
 GO
 
-drop procedure {databaseOwner}{objectQualifier}AddSurveyOption
+DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurveyOption
 GO
 
-drop procedure {databaseOwner}{objectQualifier}UpdateSurveyOption
+DROP PROCEDURE {databaseOwner}{objectQualifier}UpdateSurveyOption
 GO
 
-drop procedure {databaseOwner}{objectQualifier}DeleteSurveyOption
+DROP PROCEDURE {databaseOwner}{objectQualifier}DeleteSurveyOption
 GO
 
-drop procedure {databaseOwner}{objectQualifier}AddSurveyResult
+DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurveyResult
 GO
 
-drop procedure {databaseOwner}{objectQualifier}AddSurveyResult_cookie
+DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurveyResult_cookie
 GO
  
-drop procedure {databaseOwner}{objectQualifier}GetSurveyResultData
+DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurveyResultData
 GO
 
-drop procedure {databaseOwner}{objectQualifier}DeleteSurveyResultData
+DROP PROCEDURE {databaseOwner}{objectQualifier}DeleteSurveyResultData
 GO
 
 ALTER TABLE {databaseOwner}{objectQualifier}Surveys
@@ -58,3 +69,7 @@ GO
 DROP TABLE {databaseOwner}{objectQualifier}Surveys
 GO
 
+ 
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

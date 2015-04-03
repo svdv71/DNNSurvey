@@ -18,25 +18,28 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-namespace Dnn.Modules.Survey.Controllers
+namespace Dnn.Modules.Survey.Data
 {
-    using System.Linq;
-    using System.Web.Mvc;
-    using Dnn.Modules.Survey.Data;
+    using System.Collections.Generic;
     using Dnn.Modules.Survey.Models;
-    using DotNetNuke.Web.Mvc.Framework.ActionFilters;
-    using DotNetNuke.Web.Mvc.Framework.Controllers;
+    using DotNetNuke.Data;
 
-    [DnnHandleErrorAttribute]
-    public class SurveyController : DnnController
+    /// <summary>
+    /// </summary>
+    internal class SurveyOptionsRepository : SurveyRepositoryBase
     {
-        public ActionResult Index()
+        /// <summary>
+        /// Gets for survey.
+        /// </summary>
+        /// <param name="surveyId">The survey identifier.</param>
+        /// <returns></returns>
+        public IEnumerable<SurveyOptionInfo> GetForSurvey(int surveyId)
         {
-            var repository = new SurveyRepository();
-            var surveys = repository.Get(this.ActiveModule.ModuleID)
-                                    .OrderBy(survey => survey.ViewOrder)
-                                    .ToList();
-            return this.View(surveys);
+            using (var context = DataContext.Instance())
+            {
+                var repository = context.GetRepository<SurveyOptionInfo>();
+                return repository.Get(surveyId);
+            }
         }
     }
 }

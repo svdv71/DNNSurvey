@@ -8,6 +8,25 @@
 /*****                                                  *****/
 /************************************************************/
 
+if EXISTS
+	(
+	SELECT	*
+	FROM	dbo.sysobjects
+	WHERE	id = object_id(N'{databaseOwner}[{objectQualifier}DeleteSurvey]') 
+		AND	OBJECTPROPERTY(id, N'IsProcedure') = 1
+	)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}DeleteSurvey
+GO
+
+if EXISTS
+	(
+	SELECT	*
+	FROM	dbo.sysobjects
+	WHERE	id = object_id(N'{databaseOwner}[{objectQualifier}UpdateSurvey]') 
+		AND	OBJECTPROPERTY(id, N'IsProcedure') = 1
+	)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}UpdateSurvey
+GO
 
  
 /************************************************************/

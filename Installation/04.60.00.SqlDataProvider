@@ -8,8 +8,8 @@
 /*****                                                  *****/
 /************************************************************/
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}DeleteSurveyResultData]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-	drop procedure {databaseOwner}{objectQualifier}DeleteSurveyResultData
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}DeleteSurveyResultData]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}DeleteSurveyResultData
 GO
 
  

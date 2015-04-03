@@ -1,6 +1,6 @@
 ﻿#region Copyright
 // DotNetNuke® - http://www.dnnsoftware.com
-// Copyright (c) 2002-2014
+// Copyright (c) 2002-2015
 // by DNN Corporation
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
@@ -22,22 +22,59 @@ namespace Dnn.Modules.Survey.Models
 {
     using DotNetNuke.ComponentModel.DataAnnotations;
 
+    /// <summary>
+    /// </summary>
     [TableName("SurveyOptions")]
     [PrimaryKey("SurveyOptionId")]
+    [Scope("SurveyId")]
     public class SurveyOptionInfo
     {
+        /// <summary>
+        /// Gets or sets the survey option identifier.
+        /// </summary>
+        /// <value>
+        /// The survey option identifier.
+        /// </value>
         public int SurveyOptionId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the survey identifier.
+        /// </summary>
+        /// <value>
+        /// The survey identifier.
+        /// </value>
         public int SurveyId { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is correct.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance is correct; otherwise, <c>false</c>.
+        /// </value>
         public bool IsCorrect { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name of the option.
+        /// </summary>
+        /// <value>
+        /// The name of the option.
+        /// </value>
         public string OptionName { get; set; }
 
-        public int UserId { get; set; }
-
+        /// <summary>
+        /// Gets or sets the view order.
+        /// </summary>
+        /// <value>
+        /// The view order.
+        /// </value>
         public int ViewOrder { get; set; }
 
+        /// <summary>
+        /// Gets or sets the votes.
+        /// </summary>
+        /// <value>
+        /// The votes.
+        /// </value>
         public int Votes { get; set; }
     }
 }

@@ -17,8 +17,8 @@
 /****                by Matthias Schlomann               ****/
 /************************************************************/
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}GetSurveyResultData]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-	drop procedure {databaseOwner}{objectQualifier}GetSurveyResultData
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}GetSurveyResultData]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurveyResultData
 GO
 
 /** Create Stored Procedure **/ 
@@ -50,8 +50,8 @@ ORDER BY S.Question
 
 GO
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}AddSurveyResult_cookie]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-	drop procedure {databaseOwner}{objectQualifier}AddSurveyResult_cookie 
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}AddSurveyResult_cookie]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurveyResult_cookie 
 GO
 
 /** Create Stored Procedure **/ 
@@ -70,8 +70,8 @@ values (@SurveyOptionID, @UserID)
 
 GO
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}AddSurveyResult]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-	drop procedure {databaseOwner}{objectQualifier}AddSurveyResult 
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}AddSurveyResult]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurveyResult 
 GO
 
 /** Create Stored Procedure **/ 
@@ -90,12 +90,12 @@ update {databaseOwner}{objectQualifier}SurveyOptions set Votes = Votes + 1
  
  GO
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}UpdateSurvey]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-	drop procedure {databaseOwner}{objectQualifier}UpdateSurvey
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}UpdateSurvey]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}UpdateSurvey
 GO
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}DeleteSurvey]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-	drop procedure {databaseOwner}{objectQualifier}DeleteSurvey
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}DeleteSurvey]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}DeleteSurvey
 GO
 
 /** Create Stored Procedures **/
@@ -134,8 +134,8 @@ where  SurveyID = @SurveyID and ModuleID = @ModuleID
 
 GO
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}AddSurvey]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-	drop procedure {databaseOwner}{objectQualifier}AddSurvey
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}AddSurvey]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurvey
 GO
 
 create procedure {databaseOwner}{objectQualifier}AddSurvey
@@ -169,8 +169,8 @@ select SCOPE_IDENTITY()
 
 GO
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}GetSurvey]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-	drop procedure {databaseOwner}{objectQualifier}GetSurvey
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}GetSurvey]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurvey
 GO
 
 create procedure {databaseOwner}{objectQualifier}GetSurvey
@@ -195,8 +195,8 @@ and    ModuleID = @ModuleID
 
 GO
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}GetSurveyOptions') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-drop procedure {databaseOwner}{objectQualifier}GetSurveyOptions
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}GetSurveyOptions') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurveyOptions
 GO
 
 create procedure {databaseOwner}{objectQualifier}GetSurveyOptions
@@ -217,8 +217,8 @@ order by SO.ViewOrder
 
 GO
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}AddSurveyOption') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-drop procedure {databaseOwner}{objectQualifier}AddSurveyOption
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}AddSurveyOption') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurveyOption
 GO
 
 create procedure {databaseOwner}{objectQualifier}AddSurveyOption
@@ -249,8 +249,8 @@ select SCOPE_IDENTITY()
 
 GO
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}UpdateSurveyOption') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-drop procedure {databaseOwner}{objectQualifier}UpdateSurveyOption
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}UpdateSurveyOption') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}UpdateSurveyOption
 GO
 
 
@@ -273,8 +273,8 @@ where
 
 GO
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}DeleteSurveyOption') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-drop procedure {databaseOwner}{objectQualifier}DeleteSurveyOption
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}DeleteSurveyOption') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}DeleteSurveyOption
 GO
 
 create procedure {databaseOwner}{objectQualifier}DeleteSurveyOption
@@ -289,8 +289,8 @@ where  SurveyOptionID = @SurveyOptionID
 
 GO
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}GetSurveys') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-drop procedure {databaseOwner}{objectQualifier}GetSurveys
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}GetSurveys') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurveys
 GO
 
 create procedure {databaseOwner}{objectQualifier}GetSurveys

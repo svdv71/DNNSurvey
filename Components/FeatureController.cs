@@ -18,25 +18,28 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-namespace Dnn.Modules.Survey.Controllers
+namespace Dnn.Modules.Survey.Components
 {
-    using System.Linq;
-    using System.Web.Mvc;
-    using Dnn.Modules.Survey.Data;
-    using Dnn.Modules.Survey.Models;
-    using DotNetNuke.Web.Mvc.Framework.ActionFilters;
-    using DotNetNuke.Web.Mvc.Framework.Controllers;
+    using DotNetNuke.Entities.Modules;
 
-    [DnnHandleErrorAttribute]
-    public class SurveyController : DnnController
+    /// <summary>
+    /// </summary>
+    public class FeatureController : IUpgradeable
     {
-        public ActionResult Index()
+        #region [ IUpgradeable Members ]
+
+        /// <summary>
+        /// Upgrades the module.
+        /// </summary>
+        /// <param name="Version">The version.</param>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
+        public string UpgradeModule(string Version)
         {
-            var repository = new SurveyRepository();
-            var surveys = repository.Get(this.ActiveModule.ModuleID)
-                                    .OrderBy(survey => survey.ViewOrder)
-                                    .ToList();
-            return this.View(surveys);
+            // TODO: Provide implementation
+            return string.Empty;
         }
+
+        #endregion
     }
 }

@@ -1,0 +1,148 @@
+﻿<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="DNN_SURVEY" type="Module" version="07.05.00">
+      <friendlyName>Survey</friendlyName>
+      <description>Survey allows you to create custom surveys to obtain public feedback. Survey 7.5 was rewritten as an MVC based module.</description>
+      <iconFile>DesktopModules\MVC\Dnn\Hml\Images\html.png</iconFile>
+      <owner>
+        <name>DNN</name>
+        <organization>DNN Corp.</organization>
+        <url>http://www.dnnsoftware.com</url>
+        <email>support@dnnsoftware.com</email>
+      </owner>
+      <license src="license.txt" />
+      <releaseNotes src="releaseNotes.txt" />
+      <dependencies>
+        <dependency type="CoreVersion">07.05.00</dependency>
+      </dependencies>
+      <azureCompatible>true</azureCompatible>
+      <components>
+        <component type="Script">
+          <scripts>
+            <basePath>DesktopModules\MVC\Dnn\Survey</basePath>
+            <script type="Install">
+              <path>Installation</path>
+              <name>03.01.00.SqlDataProvider</name>
+              <version>03.01.00</version>
+            </script>
+            <script type="Install">
+              <path>Installation</path>
+              <name>03.03.00.SqlDataProvider</name>
+              <version>03.03.00</version>
+            </script>
+            <script type="Install">
+              <path>Installation</path>
+              <name>04.00.20.SqlDataProvider</name>
+              <version>04.00.20</version>
+            </script>
+            <script type="Install">
+              <path>Installation</path>
+              <name>04.00.60.SqlDataProvider</name>
+              <version>04.00.60</version>
+            </script>
+            <script type="Install">
+              <path>Installation</path>
+              <name>04.00.70.SqlDataProvider</name>
+              <version>04.00.70</version>
+            </script>
+            <script type="Install">
+              <path>Installation</path>
+              <name>04.00.85.SqlDataProvider</name>
+              <version>04.00.85</version>
+            </script>
+            <script type="Install">
+              <path>Installation</path>
+              <name>04.01.00.SqlDataProvider</name>
+              <version>04.01.00</version>
+            </script>
+            <script type="Install">
+              <path>Installation</path>
+              <name>04.50.00.SqlDataProvider</name>
+              <version>04.50.00</version>
+            </script>
+            <script type="Install">
+              <path>Installation</path>
+              <name>04.60.00.SqlDataProvider</name>
+              <version>04.60.00</version>
+            </script>
+            <script type="Install">
+              <path>Installation</path>
+              <name>07.05.00.SqlDataProvider</name>
+              <version>07.05.00</version>
+            </script>
+            <script type="UnInstall">
+              <path>Installation</path>
+              <name>Uninstall.SqlDataProvider</name>
+              <version>07.05.00</version>
+            </script>
+          </scripts>
+        </component>
+        <component type="Module">
+          <desktopModule>
+            <moduleName>DNN_Survey</moduleName>
+            <foldername>Dnn/Survey</foldername>
+            <shareable>Supported</shareable>
+            <businessControllerClass>Dnn.Modules.Survey.Components.FeatureController, Dnn.Modules.Survey</businessControllerClass>
+            <supportedFeatures>
+              <supportedFeature type="Upgradeable" />
+            </supportedFeatures>
+            <moduleDefinitions>
+              <moduleDefinition>
+                <friendlyName>Survey</friendlyName>
+                <defaultCacheTime>1200</defaultCacheTime>
+                <moduleControls>
+                  <moduleControl>
+                    <controlKey />
+                    <controlSrc>Survet/Index.mvc</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle />
+                    <controlType>View</controlType>
+                    <iconFile />
+                    <helpUrl></helpUrl>
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>Edit</controlKey>
+                    <controlSrc>Survey/Edit.mvc</controlSrc>
+                    <supportsPartialRendering>True</supportsPartialRendering>
+                    <controlTitle>Edit Content</controlTitle>
+                    <controlType>Edit</controlType>
+                    <iconFile />
+                    <helpUrl></helpUrl>
+                    <viewOrder>0</viewOrder>
+                    <supportsPopUps>True</supportsPopUps>
+                  </moduleControl>
+                </moduleControls>
+              </moduleDefinition>
+            </moduleDefinitions>
+          </desktopModule>
+          <eventMessage>
+            <processorType>DotNetNuke.Entities.Modules.EventMessageProcessor, DotNetNuke</processorType>
+            <processorCommand>UpgradeModule</processorCommand>
+            <attributes>
+              <businessControllerClass>Dnn.Modules.Survey.Components.FeaureController</businessControllerClass>
+              <desktopModuleID>[DESKTOPMODULEID]</desktopModuleID>
+              <upgradeVersionsList>07.05.00</upgradeVersionsList>
+            </attributes>
+          </eventMessage>
+        </component>
+        <component type="Assembly">
+          <assemblies>
+            <assembly>
+              <path>bin</path>
+              <name>Dnn.Modules.Survey.dll</name>
+            </assembly>
+          </assemblies>
+        </component>
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules/MVC/Dnn/Survey</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>

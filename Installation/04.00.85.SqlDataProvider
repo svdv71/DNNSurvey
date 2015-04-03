@@ -8,8 +8,8 @@
 /*****                                                  *****/
 /************************************************************/
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}AddSurveyResult_cookie]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
-	drop procedure {databaseOwner}{objectQualifier}AddSurveyResult_cookie 
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}AddSurveyResult_cookie]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurveyResult_cookie 
 GO
 
 /** Create Stored Procedure **/ 
