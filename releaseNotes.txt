@@ -1,0 +1,14 @@
+<h3>Survey</h3>
+<div class="License">
+	<h3>About Survey</h3>
+	<p class="Owner">
+		<b>Version 7.5.0</b>
+		<br /><br />
+	</p>
+	<p>This is the initial MVC version of the original DNN Survey module. This version is functional identical to version 4.7 of DNN Survey.</p>
+	
+	<h4>Bug Fixes</h4>
+	<ul>
+		<li>None</li>
+	</ul>
+</div>

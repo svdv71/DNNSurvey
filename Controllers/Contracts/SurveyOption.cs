@@ -18,69 +18,62 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-namespace Dnn.Modules.Survey.Data
+namespace Dnn.Modules.Survey.Controllers.Contracts
 {
-    using System;
-    using DotNetNuke.Data;
+    using System.ComponentModel;
+    using Dnn.Modules.Survey.Models;
 
     /// <summary>
     /// </summary>
-    internal abstract class SurveyRepositoryBase : IDisposable
+    public class SurveyOption
     {
-        #region [ Properties ]
-
         /// <summary>
-        /// Gets the database owner.
+        /// Gets or sets a value indicating whether this instance is correct.
         /// </summary>
         /// <value>
-        /// The database owner.
+        /// <c>true</c> if this instance is correct; otherwise, <c>false</c>.
         /// </value>
-        protected string DatabaseOwner
-        {
-            get
-            {
-                return DataProvider.Instance()
-                                   .DatabaseOwner;
-            }
-        }
+        public bool IsCorrect { get; set; }
 
         /// <summary>
-        /// Gets the object qualifier.
+        /// Gets or sets the name of the option.
         /// </summary>
         /// <value>
-        /// The object qualifier.
+        /// The name of the option.
         /// </value>
-        protected string ObjectQualifier
-        {
-            get
-            {
-                return DataProvider.Instance()
-                                   .ObjectQualifier;
-            }
-        }
-
-        #endregion
+        public string OptionName { get; set; }
 
         /// <summary>
-        /// Gets the fully qualified name of the object.
+        /// Gets or sets the survey option identifier.
         /// </summary>
-        /// <param name="objectName">Name of the object.</param>
+        /// <value>
+        /// The survey option identifier.
+        /// </value>
+        public int SurveyOptionId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the view order.
+        /// </summary>
+        /// <value>
+        /// The view order.
+        /// </value>
+        public int ViewOrder { get; set; }
+
+
+        /// <summary>
+        /// Froms the entity.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
         /// <returns></returns>
-        protected virtual string GetFullyQualifiedName(string objectName)
+        public static SurveyOption FromEntity(SurveyOptionInfo entity)
         {
-            return this.DatabaseOwner + this.ObjectQualifier + objectName;
+            return new SurveyOption()
+                       {   
+                           IsCorrect = entity.IsCorrect,
+                           OptionName = entity.OptionName,
+                           SurveyOptionId = entity.SurveyOptionId,
+                           ViewOrder = entity.ViewOrder,
+                       };
         }
-
-        #region [ IDisposable Members ]
-
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            // TODO: provide default implementation... Use the Diposable pattern: https://msdn.microsoft.com/en-us/library/b1yfkh5e%28v=vs.110%29.aspx
-        }
-
-        #endregion
     }
 }

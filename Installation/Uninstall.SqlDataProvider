@@ -9,43 +9,60 @@
 /************************************************************/
 
 
-DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurveys
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}GetSurveys') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurveys
 GO
 
-DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurvey
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}GetSurvey') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurvey
 GO
 
-DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurvey
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}AddSurvey') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurvey
 GO
 
-DROP PROCEDURE {databaseOwner}{objectQualifier}UpdateSurvey
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}GetSurveys') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurveys
 GO
 
-DROP PROCEDURE {databaseOwner}{objectQualifier}DeleteSurvey
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}UpdateSurvey') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}UpdateSurvey
 GO
 
-DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurveyOptions
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}DeleteSurvey') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}DeleteSurvey
 GO
 
-DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurveyOption
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}GetSurveyOptions') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurveyOptions
 GO
 
-DROP PROCEDURE {databaseOwner}{objectQualifier}UpdateSurveyOption
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}AddSurveyOption') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurveyOption
 GO
 
-DROP PROCEDURE {databaseOwner}{objectQualifier}DeleteSurveyOption
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}UpdateSurveyOption') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}UpdateSurveyOption
 GO
 
-DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurveyResult
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}DeleteSurveyOption') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}DeleteSurveyOption
 GO
 
-DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurveyResult_cookie
-GO
- 
-DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurveyResultData
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}AddSurveyResult') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurveyResult
 GO
 
-DROP PROCEDURE {databaseOwner}{objectQualifier}DeleteSurveyResultData
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}AddSurveyResult_cookie') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}AddSurveyResult_cookie
+GO
+
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}GetSurveyResultData') and OBJECTPROPERTY(id, N'IsProcedure') = 1) 
+	DROP PROCEDURE {databaseOwner}{objectQualifier}GetSurveyResultData
+GO
+
+if EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}DeleteSurveyResultData') and OBJECTPROPERTY(id, N'IsProcedure') = 1) 
+	DROP PROCEDURE {databaseOwner}{objectQualifier}DeleteSurveyResultData
 GO
 
 ALTER TABLE {databaseOwner}{objectQualifier}Surveys

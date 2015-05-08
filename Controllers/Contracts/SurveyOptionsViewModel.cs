@@ -18,21 +18,24 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-namespace Dnn.Modules.Survey.Models
+namespace Dnn.Modules.Survey.Controllers.Contracts
 {
     using System.Collections.Generic;
-    using System.Runtime.InteropServices.ComTypes;
+    using System.Runtime.Serialization;
+    using DotNetNuke.Entities.Urls;
 
     /// <summary>
     /// </summary>
-    public class SurveyListInfo
+    [DataContract]
+    public class SurveyOptionsViewModel
     {
         /// <summary>
-        /// Gets or sets the surveys.
+        /// Gets or sets the survey options.
         /// </summary>
         /// <value>
-        /// The surveys.
+        /// The survey options.
         /// </value>
-        public IEnumerable<SurveyInfo> Surveys { get; set; }
+        [DataMember]
+        public IEnumerable<SurveyOption> SurveyOptions { get; set; }
     }
 }

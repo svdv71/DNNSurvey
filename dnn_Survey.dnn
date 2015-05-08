@@ -3,7 +3,7 @@
     <package name="DNN_SURVEY" type="Module" version="07.05.00">
       <friendlyName>Survey</friendlyName>
       <description>Survey allows you to create custom surveys to obtain public feedback. Survey 7.5 was rewritten as an MVC based module.</description>
-      <iconFile>DesktopModules\MVC\Dnn\Hml\Images\html.png</iconFile>
+      <iconFile>DesktopModules\MVC\Dnn\Survey\dnn_survey32.png</iconFile>
       <owner>
         <name>DNN</name>
         <organization>DNN Corp.</organization>
@@ -93,7 +93,7 @@
                 <moduleControls>
                   <moduleControl>
                     <controlKey />
-                    <controlSrc>Survet/Index.mvc</controlSrc>
+                    <controlSrc>Survey/Index.mvc</controlSrc>
                     <supportsPartialRendering>False</supportsPartialRendering>
                     <controlTitle />
                     <controlType>View</controlType>
@@ -112,19 +112,21 @@
                     <viewOrder>0</viewOrder>
                     <supportsPopUps>True</supportsPopUps>
                   </moduleControl>
+                  <moduleControl>
+                    <controlKey>Settings</controlKey>
+                    <controlSrc>Survey/Settings.mvc</controlSrc>
+                    <supportsPartialRendering>True</supportsPartialRendering>
+                    <controlTitle>Survey Settings</controlTitle>
+                    <controlType>Admin</controlType>
+                    <iconFile />
+                    <helpUrl></helpUrl>
+                    <viewOrder>0</viewOrder>
+                    <supportsPopUps>True</supportsPopUps>
+                  </moduleControl>
                 </moduleControls>
               </moduleDefinition>
             </moduleDefinitions>
           </desktopModule>
-          <eventMessage>
-            <processorType>DotNetNuke.Entities.Modules.EventMessageProcessor, DotNetNuke</processorType>
-            <processorCommand>UpgradeModule</processorCommand>
-            <attributes>
-              <businessControllerClass>Dnn.Modules.Survey.Components.FeaureController</businessControllerClass>
-              <desktopModuleID>[DESKTOPMODULEID]</desktopModuleID>
-              <upgradeVersionsList>07.05.00</upgradeVersionsList>
-            </attributes>
-          </eventMessage>
         </component>
         <component type="Assembly">
           <assemblies>

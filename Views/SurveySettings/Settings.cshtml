@@ -1,0 +1,14 @@
+﻿@inherits DotNetNuke.Web.Mvc.Framework.DnnWebViewPage<Dnn.Modules.Survey.Models.SurveyModuleSettingsInfo>
+
+@using DotNetNuke.Web.Mvc.Helpers
+
+<div class="dnnForm">
+    <fieldset>
+        <div class="dnnFormItem">
+            <div class="dnnLabel">
+                @Html.LabelFor(m => m.SurveyClosingDate )
+            </div>
+            @Html.TextBoxFor(m => m.SurveyClosingDate, new { id = "SurveyClosingDate" })
+        </div>
+    </fieldset>
+</div>

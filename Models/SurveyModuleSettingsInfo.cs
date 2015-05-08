@@ -21,90 +21,66 @@
 namespace Dnn.Modules.Survey.Models
 {
     using System;
-    using System.Collections.Generic;
+    using System.Collections;
+    using System.Globalization;
+    using DotNetNuke.Collections;
     using DotNetNuke.Common.Utilities;
-    using DotNetNuke.ComponentModel.DataAnnotations;
-    using DotNetNuke.UI.WebControls;
 
     /// <summary>
     /// </summary>
-    [TableName("Surveys")]
-    [PrimaryKey("SurveyId")]
-    [Scope("ModuleId")]
-    public class SurveyInfo
+    public class SurveyModuleSettingsInfo
     {
+        #region [ Constructors ]
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="SurveyInfo"/> class.
+        /// Initializes a new instance of the <see cref="SurveyModuleSettingsInfo"/> class.
         /// </summary>
-        public SurveyInfo()
+        public SurveyModuleSettingsInfo()
         {
-            this.SurveyId = Null.NullInteger;
-            this.ModuleId = Null.NullInteger;
         }
 
         /// <summary>
-        /// Gets or sets the survey identifier.
+        /// Initializes a new instance of the <see cref="SurveyModuleSettingsInfo"/> class.
         /// </summary>
-        /// <value>
-        /// The survey identifier.
-        /// </value>
-        public int SurveyId { get; set; }
+        /// <param name="settings">The settings.</param>
+        public SurveyModuleSettingsInfo(Hashtable settings)
+        {
+            this.SurveyClosingDate = settings.GetValueOrDefault<DateTime>("surveyclosingdate", Null.NullDate);
+            this.MaximumBarGraphWidth = settings.GetValueOrDefault<int>("surveygraphwidth", 0);
+        }
+        
+        #endregion
 
         /// <summary>
-        /// Gets or sets the module identifier.
+        /// Gets or sets the survey closing date.
         /// </summary>
         /// <value>
-        /// The module identifier.
+        /// The survey closing date.
         /// </value>
-        public int ModuleId { get; set; }
+        public DateTime? SurveyClosingDate { get; set; }
 
         /// <summary>
-        /// Gets or sets the created by user.
+        /// Gets or sets the maximum width of the bar graph.
         /// </summary>
         /// <value>
-        /// The created by user.
+        /// The maximum width of the bar graph.
         /// </value>
-        public int CreatedByUser { get; set; }
+        public int MaximumBarGraphWidth { get; set; }
 
         /// <summary>
-        /// Gets or sets the created date.
+        /// Gets or sets a value indicating whether [survey results public].
         /// </summary>
         /// <value>
-        /// The created date.
+        ///   <c>true</c> if [survey results public]; otherwise, <c>false</c>.
         /// </value>
-        public DateTime CreatedDate { get; set; }
+        public bool SurveyResultsPublic { get; set; }
 
         /// <summary>
-        /// Gets or sets the type of the option.
+        /// Gets or sets the survey result template.
         /// </summary>
         /// <value>
-        /// The type of the option.
+        /// The survey result template.
         /// </value>
-        public string OptionType { get; set; }
-
-        /// <summary>
-        /// Gets or sets the question.
-        /// </summary>
-        /// <value>
-        /// The question.
-        /// </value>
-        public string Question { get; set; }
-
-        /// <summary>
-        /// Gets or sets the view order.
-        /// </summary>
-        /// <value>
-        /// The view order.
-        /// </value>
-        public int ViewOrder { get; set; }
-
-        /// <summary>
-        /// Gets or sets the options.
-        /// </summary>
-        /// <value>
-        /// The options.
-        /// </value>
-        [IgnoreColumn]
-        public IEnumerable<SurveyOptionInfo> Options { get; set; }
+        public string SurveyResultTemplate { get; set; }
     }
 }

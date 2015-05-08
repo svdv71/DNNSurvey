@@ -1,4 +1,46 @@
-﻿@inherits DotNetNuke.Web.Mvc.Framework.DnnWebViewPage<Dnn.Modules.Survey.Models.SurveyInfo>
+﻿<!-- Ensure DotNetNuke.Web.MVC has CopyLocal otherwise the namespace cannot be found -->
+@inherits DotNetNuke.Web.Mvc.Framework.DnnWebViewPage<Dnn.Modules.Survey.Models.SurveyInfo>
 
+@using System.Web.Routing
+@using Dnn.Modules.Survey.Controllers
 @using DotNetNuke.Web.Mvc.Helpers
 
+@{
+    this.Dnn.LocalResourceFile = "edit.resx";
+}
+
+<div class="dnnForm dnnClear dnnSurveyEdit">
+    <fieldset>
+        <div class="dnnFormItem">
+            @Html.LabelFor(s => s.Question, this.Dnn.LocalizeString("lblQuestion"))
+            @Html.TextBoxFor(s => s.Question)
+        </div>
+
+        <div class="dnnFormItem">
+            @Html.LabelFor(s => s.OptionType, this.Dnn.LocalizeString("lblOptionType"))
+            @Html.DropDownListFor(s => s.OptionType, ((SurveyController)this.ViewContext.Controller).GetOptionTypes())
+        </div>
+
+        <div class="dnnFormItem">
+            @Html.LabelFor(s => s.ViewOrder, this.Dnn.LocalizeString("lblViewOrder"))
+            @Html.TextBoxFor(s => s.ViewOrder)
+        </div>
+        
+        <div class="dnnFormItem">
+            <label> @this.Dnn.LocalizeString("lblOptionName") </label>
+        </div>
+        
+        <div class="dnnFormItem">
+            @Html.ActionLink("Add option", "AddOption")
+        </div>
+        
+        <div class="dnnFormItem">
+            <select></select>
+        </div>
+    </fieldset>
+
+    <ul class="dnnActions dnnClear">
+        <li><button class="btn dnnPrimaryAction">@this.Dnn.LocalizeString("cmdUpdate")</button></li>
+        <li><button class="btn dnnSecondaryAction">@this.Dnn.LocalizeString("cmdCancel")</button></li>
+    </ul>
+</div>

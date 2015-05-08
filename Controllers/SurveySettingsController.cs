@@ -18,21 +18,40 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
-namespace Dnn.Modules.Survey.Models
+namespace Dnn.Modules.Survey.Controllers
 {
-    using System.Collections.Generic;
-    using System.Runtime.InteropServices.ComTypes;
+    using System.Web.Mvc;
+    using Dnn.Modules.Survey.Models;
+    using DotNetNuke.Web.Mvc.Framework.Controllers;
 
     /// <summary>
     /// </summary>
-    public class SurveyListInfo
+    public class SurveySettingsController : DnnController
     {
         /// <summary>
-        /// Gets or sets the surveys.
+        /// Settingses this instance.
         /// </summary>
-        /// <value>
-        /// The surveys.
-        /// </value>
-        public IEnumerable<SurveyInfo> Surveys { get; set; }
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult Settings()
+        {
+            var settings = new SurveyModuleSettingsInfo(ModuleContext.Configuration.ModuleSettings);
+            return this.View(settings);
+        }
+
+        /// <summary>
+        /// Updates the ModuleSettings.
+        /// </summary>
+        /// <param name="surveyClosingDate">The survey closing date.</param>
+        /// <returns></returns>
+        [HttpPost]
+        [ValidateInput(false)]
+        [ValidateAntiForgeryToken]
+        public ActionResult Settings(string surveyClosingDate)
+        {
+            // ModuleContext.Configuration.ModuleSettings["Html_ReplaceTokens"] = supportsTokens.ToString();
+            return RedirectToDefaultRoute();
+        }
+
     }
 }
